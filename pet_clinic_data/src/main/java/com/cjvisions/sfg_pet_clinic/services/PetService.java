@@ -4,13 +4,6 @@ import com.cjvisions.sfg_pet_clinic.model.Pet;
 
 import java.util.Set;
 
-public interface PetService {
+public interface PetService extends CrudService<Pet, Long> {
 
-    Pet findById(Pet id);
-
-    Pet findByLastName(String lastName);
-
-    Pet save(Pet pet);
-
-    Set<Pet> findAll();
 }
