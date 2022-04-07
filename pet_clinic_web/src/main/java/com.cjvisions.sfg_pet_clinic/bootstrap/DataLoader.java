@@ -4,8 +4,6 @@ import com.cjvisions.sfg_pet_clinic.model.Owner;
 import com.cjvisions.sfg_pet_clinic.model.Vet;
 import com.cjvisions.sfg_pet_clinic.services.OwnerService;
 import com.cjvisions.sfg_pet_clinic.services.VetService;
-import com.cjvisions.sfg_pet_clinic.services.map.OwnerServiceMap;
-import com.cjvisions.sfg_pet_clinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -56,6 +54,7 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
+        System.out.println("Loaded Vets.............................................");
 
     }
 }

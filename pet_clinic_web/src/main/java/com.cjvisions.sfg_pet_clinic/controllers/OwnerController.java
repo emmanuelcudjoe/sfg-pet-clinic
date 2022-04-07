@@ -1,15 +1,25 @@
 package com.cjvisions.sfg_pet_clinic.controllers;
 
+import com.cjvisions.sfg_pet_clinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
 @RequestMapping("/owners")
+@Controller
 public class OwnerController {
 
-    @RequestMapping({"/", "/index", "/index.html"})
-    public String listOwners(){
+    private final OwnerService ownerService;
 
-        return "owners/index ";
+    public OwnerController(OwnerService ownerService) {
+        this.ownerService = ownerService;
+    }
+
+    @RequestMapping({"", "/", "/index", "/index.html"})
+    public String listOwners(Model model){
+
+        model.addAttribute("owners", ownerService.findAll());
+
+        return "owners/index";
     }
 }
