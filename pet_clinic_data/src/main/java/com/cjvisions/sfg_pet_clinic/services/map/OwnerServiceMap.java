@@ -1,11 +1,12 @@
 package com.cjvisions.sfg_pet_clinic.services.map;
 
 import com.cjvisions.sfg_pet_clinic.model.Owner;
-import com.cjvisions.sfg_pet_clinic.services.CrudService;
 import com.cjvisions.sfg_pet_clinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
