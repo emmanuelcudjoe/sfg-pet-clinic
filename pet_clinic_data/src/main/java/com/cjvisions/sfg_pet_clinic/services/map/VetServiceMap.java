@@ -1,11 +1,11 @@
 package com.cjvisions.sfg_pet_clinic.services.map;
 
 import com.cjvisions.sfg_pet_clinic.model.Vet;
-import com.cjvisions.sfg_pet_clinic.services.CrudService;
+import com.cjvisions.sfg_pet_clinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
@@ -18,11 +18,6 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
     }
 
     @Override
-    public void delete(Vet t) {
-        super.delete(t);
-    }
-
-    @Override
     public Vet save(Vet vet) {
         return super.save(vet.getId(), vet);
     }
@@ -30,5 +25,11 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
     @Override
     public Vet findById(Long id) {
         return super.findById(id);
+    }
+
+
+    @Override
+    public void delete(Vet vet) {
+        super.delete(vet);
     }
 }
